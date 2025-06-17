@@ -238,7 +238,7 @@ class QuizPlatformApp {
             const formData = this.collectQuizData();
             await quizManager.createQuiz(formData);
             
-            alert('Quiz został utworzony pomyślnie!');
+            
             this.showPage('home');
         } catch (error) {
             alert('Błąd przy tworzeniu quizu: ' + error.message);
@@ -294,7 +294,7 @@ class QuizPlatformApp {
             await quizManager.startQuiz(quizId);
             this.showQuizTaking();
         } catch (error) {
-            alert('Błąd przy rozpoczynaniu quizu: ' + error.message);
+            
         }
     }
 
