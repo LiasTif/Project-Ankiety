@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platforma Quizów i Ankiet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Platforma Quizów i Ankiet</h1>
+            <nav>
+                <button id="homeBtn" class="nav-btn active">Strona Główna</button>
+                <button id="createBtn" class="nav-btn">Utwórz Quiz</button>
+                <button id="statsBtn" class="nav-btn">Statystyki</button>
+            </nav>
+        </header>
+
+        <!-- Strona główna -->
+        <div id="homePage" class="page active">
+            <div class="hero">
+                <h2>Witaj na platformie quizów!</h2>
+                <p>Twórz interaktywne quizy i ankiety, zbieraj odpowiedzi i analizuj wyniki.</p>
+            </div>
+            
+            <div class="quiz-list">
+                <h3>Dostępne Quizy</h3>
+                <div id="quizListContainer">
+                    <p class="no-quizzes">Brak dostępnych quizów. Utwórz pierwszy quiz!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tworzenie quizu -->
+        <div id="createPage" class="page">
+            <h2>Utwórz Nowy Quiz</h2>
+            <form id="quizForm">
+                <div class="form-group">
+                    <label for="quizTitle">Tytuł Quizu:</label>
+                    <input type="text" id="quizTitle" required placeholder="Wprowadź tytuł quizu">
+                </div>
+                
+                <div class="form-group">
+                    <label for="quizDescription">Opis:</label>
+                    <textarea id="quizDescription" placeholder="Opcjonalny opis quizu"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="isAnkieta"> To jest ankieta (brak poprawnych odpowiedzi)
+                    </label>
+                </div>
+
+                <div id="questionsContainer">
+                    <h3>Pytania</h3>
+                </div>
+
+                <button type="button" id="addQuestionBtn" class="btn-secondary">+ Dodaj Pytanie</button>
+                <button type="submit" class="btn-primary">Zapisz Quiz</button>
+            </form>
+        </div>
+
+        <!-- Quiz rozwiązywanie -->
+        <div id="takePage" class="page">
+            <div id="quizContent"></div>
+        </div>
+
+        <!-- Statystyki -->
+        <div id="statsPage" class="page">
+            <h2>Statystyki i Wyniki</h2>
+            <div id="statsContainer">
+                <p>Wybierz quiz z listy, aby zobaczyć statystyki.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="quiz.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
